@@ -1,0 +1,8 @@
+[isort]
+line_length = 79
+
+skip=.tox/*,env/*
+not_skip = __init__.py
+include_trailing_comma = true
+balanced_wrapping = true
+combine_as_imports = true
