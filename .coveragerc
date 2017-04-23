@@ -1,0 +1,23 @@
+[run]
+branch = True
+omit =
+    django_tqdm/tests/*
+    django_tqdm/demos/*
+    setup.py
+
+[report]
+
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self\.debug
+    raise AssertionError
+    raise NotImplementedError
+
+ignore_errors = True
+show_missing = True
+
+omit =
+    django_tqdm/tests/*
+    django_tqdm/demos/*
+    setup.py
