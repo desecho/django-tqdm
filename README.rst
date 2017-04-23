@@ -3,8 +3,9 @@ django-tqdm
 
 |PyPI-Status| |PyPI-Versions| |Travis| |Codecov| |Codacy| |Requirements|
 
-*Use tqdm in django management commands seamlessly.*
+*Fast, Extensible Progress Meter (tqdm) For Django*.
 
+Use tqdm in django management commands seamlessly.
 It uses tqdm_ and it is meant to be used with Django_.
 It provides simple universal commands for Django management command to output text using standard command functions and tqdm.
 
@@ -66,8 +67,8 @@ In vanilla Django:
 Demos
 ------------
 
-Demo 1
-------------
+Demo 1 - Simple usage
+------------------------
 
 .. code:: python
 
@@ -76,8 +77,8 @@ Demo 1
 
 |Demo1|
 
-Demo 2
-------------
+Demo 2 - tqdm usage
+-----------------------
 
 .. code:: python
 
