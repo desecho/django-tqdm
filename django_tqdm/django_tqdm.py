@@ -1,4 +1,5 @@
-# coding: utf-8
+"""Fast, Extensible Progress Meter (tqdm) For Django."""
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 import sys
@@ -12,10 +13,10 @@ from tqdm import tqdm as tqdm_original
 try:
     unicode
 except NameError:
-    unicode = lambda s: str(s)
+    unicode = lambda s: str(s)  # pylint: disable=redefined-builtin
 
 
-class OutputBase:
+class OutputBase(object):
     def error(self, text, ending='\n', fatal=False):
         self.write(text, ending=ending, fatal=fatal, error=True)
 
@@ -23,7 +24,7 @@ class OutputBase:
         self.write(text, ending=ending, fatal=fatal)
 
 
-class BaseCommand(BaseCommandOriginal, OutputBase):
+class BaseCommand(BaseCommandOriginal, OutputBase):  # pylint: disable=no-member,abstract-method
     def write(self, text, ending='\n', fatal=False, error=False):
         text = unicode(text)
         if error:
@@ -38,7 +39,7 @@ class BaseCommand(BaseCommandOriginal, OutputBase):
         return tqdm(command=self, *args, **kwargs)
 
 
-class tqdm(tqdm_original, OutputBase):
+class tqdm(tqdm_original, OutputBase):  # pylint: disable=no-member
     def __init__(self, *args, **kwargs):
         self.command = kwargs.pop('command')
         self.isatty = self.command.stdout.isatty()
@@ -51,7 +52,7 @@ class tqdm(tqdm_original, OutputBase):
             kwargs['leave'] = False
         super(tqdm, self).__init__(*args, **kwargs)
 
-    def write(self, text, file=sys.stdout, ending='\n', fatal=False, error=False):
+    def write(self, text, file=sys.stdout, ending='\n', fatal=False, error=False):  # pylint: disable=redefined-builtin
         if self.isatty:
             if error:
                 text = unicode(text)

@@ -1,3 +1,5 @@
+"""Demo 2 - tqdm usage."""
+
 from time import sleep
 
 from django_tqdm import BaseCommand

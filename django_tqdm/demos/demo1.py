@@ -1,3 +1,5 @@
+"""Demo 1 - Simple usage."""
+
 from django_tqdm import BaseCommand
 
 

@@ -1,0 +1,9 @@
+[FORMAT]
+max-line-length: 119
+
+[REPORTS]
+output-format=colorized
+
+[MESSAGES CONTROL]
+# Should probably resolve no-member warnings
+disable=missing-docstring,unnecessary-lambda,invalid-name,no-init,no-member,redefined-outer-name,too-many-arguments,arguments-differ

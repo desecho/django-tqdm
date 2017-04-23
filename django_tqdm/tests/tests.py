@@ -1,4 +1,6 @@
-# coding: utf-8
+"""Tests for django-tqdm"""
+
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from time import sleep
@@ -26,7 +28,14 @@ class Command(BaseCommand):
         def fatal():
             self.error('error', fatal=True)
 
-        eval(name + '()')
+        # pylint gives errors when it is used
+        # locals()[name]()
+        if name == 'basic':
+            basic()
+        elif name == 'tqdm':
+            tqdm()
+        elif name == 'fatal':
+            fatal()
 
 
 def test_basic(capsys):
