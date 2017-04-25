@@ -6,4 +6,4 @@ output-format=colorized
 
 [MESSAGES CONTROL]
 # Should probably resolve no-member warnings
-disable=missing-docstring,unnecessary-lambda,invalid-name,no-init,no-member,redefined-outer-name,too-many-arguments,arguments-differ
+disable=missing-docstring,unnecessary-lambda,invalid-name,no-init,no-member,redefined-outer-name,too-many-arguments,arguments-differ,superfluous-parens,too-few-public-methods,old-style-class
