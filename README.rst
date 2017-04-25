@@ -42,7 +42,7 @@ Advanced:
     error(text, ending='\n', fatal=False)
     write(text, ending='\n', fatal=False, error=False)
 
-If you set *fatal* to *True* it will terminate the command after printing the message.
+If you set ``fatal`` to ``True`` it will terminate the command after printing the message.
 
 For documentation on tqdm see tqdm_.
 
