@@ -110,9 +110,14 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 |Demo3|
 
 
-.. |Demo1| image:: https://desecho.org/django-tqdm/demo1.gif
-.. |Demo2| image:: https://desecho.org/django-tqdm/demo2.gif
-.. |Demo3| image:: https://desecho.org/django-tqdm/demo3.gif
+.. |Demo1| image:: https://asciinema.org/a/117133.png
+   :target: https://asciinema.org/a/117133
+
+.. |Demo2| image:: https://asciinema.org/a/117136.png
+   :target: https://asciinema.org/a/117136
+
+.. |Demo3| image:: https://asciinema.org/a/117137.png
+   :target: https://asciinema.org/a/117137
 
 .. |PyPI-Status| image:: https://img.shields.io/pypi/v/django-tqdm.svg
    :target: https://pypi.python.org/pypi/django-tqdm
