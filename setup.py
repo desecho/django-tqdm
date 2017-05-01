@@ -4,19 +4,22 @@ from os.path import abspath, dirname, join
 from setuptools import find_packages, setup
 
 
+CURRENT_DIR = dirname(abspath(__file__))
+
+
 def readme():
-    with codecs.open(join(dirname(abspath(__file__)), 'README.rst'), encoding='utf-8') as f:
+    with codecs.open(join(CURRENT_DIR, 'README.rst'), encoding='utf-8') as f:
         return f.read()
 
 
 def requirements():
-    with open('requirements.txt') as f:
+    with open(join(CURRENT_DIR, 'requirements.txt')) as f:
         return f.read().splitlines()
 
 
 setup(
     name='django_tqdm',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/desecho/django-tqdm',
     license='MIT',
     author='Anton Samarchyan',
