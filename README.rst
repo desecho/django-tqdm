@@ -5,9 +5,10 @@ django-tqdm
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
-Use tqdm in django management commands seamlessly.
+Use tqdm in Django management commands seamlessly.
 It uses tqdm_ and it is meant to be used with Django_.
 It provides simple universal commands for Django management command to output text using standard command functions and tqdm.
+Currently supported versions of Django are supported.
 
 Usage
 -----
