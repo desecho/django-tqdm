@@ -1,4 +1,4 @@
-.PHONY: install upgrade flake8 coverage travis pylint
+.PHONY: install upgrade flake8 coverage travis pylint bandit
 
 install:
 	pip install -r requirements-dev.txt
@@ -18,7 +18,7 @@ isort:
 	isort --check-only --recursive --diff django_tqdm
 
 bandit:
-    bandit -r django_tqdm --exclude django_tqdm/tests
+	bandit -r django_tqdm --exclude django_tqdm/tests
 
 coverage:
 	py.test --cov-report term-missing --cov django_tqdm --verbose
