@@ -17,7 +17,10 @@ pylint:
 isort:
 	isort --check-only --recursive --diff django_tqdm
 
+bandit:
+    bandit -r django_tqdm --exclude django_tqdm/tests
+
 coverage:
 	py.test --cov-report term-missing --cov django_tqdm --verbose
 
-travis: install pylint flake8 isort coverage
+travis: install pylint flake8 isort bandit coverage
