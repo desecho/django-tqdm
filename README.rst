@@ -1,7 +1,7 @@
 django-tqdm
 ==============
 
-|PyPI-Status| |PyPI-Versions| |LICENSE| |Travis| |Codecov| |Codacy| |Requirements|
+|PyPI-Status| |PyPI-Versions| |LICENSE| |Travis| |Codecov| |Requirements|
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
@@ -133,9 +133,6 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 
 .. |Codecov| image:: https://codecov.io/gh/desecho/django-tqdm/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/desecho/django-tqdm
-
-.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/fd1d71750ca8434199778c80e19b5136
-    :target: https://www.codacy.com/app/desecho/django-tqdm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=desecho/django-tqdm&amp;utm_campaign=Badge_Grade
 
 .. |Requirements| image:: https://requires.io/github/desecho/django-tqdm/requirements.svg?branch=master
      :target: https://requires.io/github/desecho/django-tqdm/requirements/?branch=master
