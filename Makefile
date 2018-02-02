@@ -18,6 +18,6 @@ isort:
 	isort --check-only --recursive --diff django_tqdm
 
 coverage:
-	py.test --cov-report term-missing --cov django_tqdm
+	py.test --cov-report term-missing --cov django_tqdm --verbose
 
 travis: install pylint flake8 isort coverage

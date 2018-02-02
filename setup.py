@@ -3,7 +3,6 @@ from os.path import abspath, dirname, join
 
 from setuptools import find_packages, setup
 
-
 CURRENT_DIR = dirname(abspath(__file__))
 
 
@@ -49,7 +48,4 @@ setup(
         'Intended Audience :: Developers',
     ],
     keywords='progressbar progressmeter progress bar meter rate eta console terminal time',
-    tests_require=[
-        'pytest',
-    ],
 )

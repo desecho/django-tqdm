@@ -6,4 +6,8 @@ output-format=colorized
 
 [MESSAGES CONTROL]
 # Should probably resolve no-member warnings
-disable=missing-docstring,unnecessary-lambda,invalid-name,no-init,no-member,redefined-outer-name,too-many-arguments,arguments-differ,superfluous-parens,too-few-public-methods,old-style-class,fixme
+
+# Disable C0411, C0412, C0413 because imports are handled by isort
+# Disable R0801 because of the issue in pylint where it cannot be partially disabled. https://github.com/PyCQA/pylint/issues/214
+
+disable=missing-docstring,unnecessary-lambda,invalid-name,no-init,no-member,redefined-outer-name,too-many-arguments,arguments-differ,superfluous-parens,too-few-public-methods,old-style-class,fixme,C0103,C0111,C0411,C0412,C0413,R0801

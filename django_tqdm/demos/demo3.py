@@ -2,8 +2,8 @@
 
 import sys
 from time import sleep
-from tqdm import tqdm
 
+from tqdm import tqdm
 
 t = tqdm(total=50)
 for x in range(50):

@@ -8,7 +8,6 @@ from django.core.management.base import BaseCommand as BaseCommandOriginal
 from django.core.management.color import color_style
 from tqdm import tqdm as tqdm_original
 
-
 # Fix for python3
 try:
     unicode
