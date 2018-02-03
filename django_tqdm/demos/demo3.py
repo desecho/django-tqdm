@@ -1,4 +1,4 @@
-"""Demo 3 - Vanilla tqdm with default settings for comparison"""
+"""Demo 3 - Vanilla tqdm with default settings for comparison."""
 
 import sys
 from time import sleep

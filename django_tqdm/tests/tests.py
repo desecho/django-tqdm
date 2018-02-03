@@ -1,4 +1,4 @@
-"""Tests for django-tqdm"""
+"""Tests for django-tqdm."""
 
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
