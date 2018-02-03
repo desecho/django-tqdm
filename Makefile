@@ -1,4 +1,4 @@
-.PHONY: install upgrade flake8 coverage travis pylint bandit restructuredtext
+.PHONY: install upgrade flake8 coverage travis pylint bandit restructuredtext pydocstyle
 
 install:
 	pip install -r requirements-dev.txt
@@ -26,4 +26,7 @@ coverage:
 restructuredtext:
 	python setup.py check --restructuredtext --metadata --strict
 
-travis: install pylint flake8 isort bandit restructuredtext coverage
+pydocstyle:
+	pydocstyle --count
+
+travis: install pylint flake8 isort bandit restructuredtext pydocstyle coverage
