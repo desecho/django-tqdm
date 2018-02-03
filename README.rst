@@ -5,10 +5,10 @@ django-tqdm
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
-Use tqdm in Django management commands seamlessly.
-It uses tqdm_ and it is meant to be used with Django_.
-It provides simple universal commands for Django management command to output text using standard command functions and tqdm.
-Currently supported versions of Django are supported.
+| Use tqdm_ in Django management commands seamlessly.
+| It provides simple universal commands for Django management command to output
+  text using standard command functions and tqdm.
+| Currently supported versions of Django_ are supported.
 
 Usage
 -----
@@ -43,7 +43,7 @@ Advanced:
     error(text, ending='\n', fatal=False)
     write(text, ending='\n', fatal=False, error=False)
 
-If you set ``fatal`` to ``True`` it will terminate the command after printing the message.
+If you set `fatal` to `True` it will terminate the command after printing the message.
 
 For documentation on tqdm see tqdm_.
 
@@ -109,6 +109,12 @@ Demo 3 - Vanilla tqdm with default settings for comparison
             t.write('error', file=sys.stderr)
 
 |Demo3|
+
+Development
+--------------
+
+| Use `clean.sh` to automatically prettify your code.
+| Use `tox` for testing and linting.
 
 
 .. |Demo1| image:: https://asciinema.org/a/117133.png
