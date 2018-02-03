@@ -1,4 +1,4 @@
-.PHONY: install upgrade flake8 coverage travis pylint bandit
+.PHONY: install upgrade flake8 coverage travis pylint bandit restructuredtext
 
 install:
 	pip install -r requirements-dev.txt
@@ -23,4 +23,7 @@ bandit:
 coverage:
 	py.test --cov-report term-missing --cov django_tqdm --verbose
 
-travis: install pylint flake8 isort bandit coverage
+restructuredtext:
+	python setup.py check --restructuredtext --metadata --strict
+
+travis: install pylint flake8 isort bandit restructuredtext coverage
