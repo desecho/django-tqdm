@@ -18,7 +18,7 @@ def requirements():
 
 setup(
     name='django_tqdm',
-    version='0.0.3',
+    version='1.0.0',
     url='https://github.com/desecho/django-tqdm',
     license='MIT',
     author='Anton Samarchyan',
@@ -31,7 +31,7 @@ setup(
     include_package_data=True,
     platforms='any',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
