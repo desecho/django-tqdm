@@ -1,7 +1,7 @@
 django-tqdm
 ==============
 
-|PyPI-Status| |PyPI-Versions| |LICENSE| |Travis| |Codecov| |Requirements|
+|PyPI-Status| |PyPI-Versions| |LICENSE| |Travis| |Codecov| |Requirements| |Downloads|
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
@@ -144,6 +144,10 @@ Development
 .. |Requirements| image:: https://requires.io/github/desecho/django-tqdm/requirements.svg?branch=master
      :target: https://requires.io/github/desecho/django-tqdm/requirements/?branch=master
      :alt: Requirements Status
+
+.. |Downloads| image:: https://pepy.tech/badge/django-tqdm
+     :target: https://pepy.tech/project/django-tqdm
+     :alt: RequiDownloads
 
 .. _tqdm: https://github.com/tqdm/tqdm
 .. _Django: https://www.djangoproject.com
