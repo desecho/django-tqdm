@@ -15,7 +15,8 @@ except NameError:
     unicode = lambda s: str(s)  # pylint: disable=redefined-builtin
 
 
-class OutputBase(object):
+# Remove `(object)` when we drop Python 2 support.
+class OutputBase(object):  # pylint: disable=useless-object-inheritance
     def error(self, text, ending='\n', fatal=False):
         self.write(text, ending=ending, fatal=fatal, error=True)
 

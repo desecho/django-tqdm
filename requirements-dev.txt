@@ -16,7 +16,7 @@ pylint>=1.7.1
 tox>=2.7.0
 isort>=4.2
 flake8>=2.2.5
-bandit>=1.4.0
+bandit<1.6.0
 pydocstyle>=2.1.1
 safety>=1.6.1
 
