@@ -16,3 +16,6 @@ branches:
 
 script:
   - make travis
+
+sudo: required
+dist: xenial
