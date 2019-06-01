@@ -5,7 +5,7 @@ codecov>=1.6
 
 
 # Pytest
-pytest>=3.0
+pytest>=3.6
 pytest-cov>=1.8
 pytest-sugar>=0.7.0
 pytest-mock>=1.6.0
@@ -23,3 +23,6 @@ safety>=1.6.1
 # reStructuredText
 docutils>=0.14
 pygments>=2.2.0
+
+# We don't actually need it but for some reason it appears in safety and tox fails.
+numpy>=1.16.0
