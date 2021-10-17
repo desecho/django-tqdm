@@ -1,0 +1,40 @@
+name: Test
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+      - dev
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9']
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+
+      - name: Install test requirements
+        run: |
+          sudo curl https://github.com/mvdan/sh/releases/download/v3.4.0/shfmt_v3.4.0_linux_amd64 -Lo /usr/local/bin/shfmt
+          sudo chmod +x /usr/local/bin/shfmt
+          sudo apt install shellcheck -y
+          pip install tox
+
+      - name: Run tests
+        run: make test
