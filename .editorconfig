@@ -18,6 +18,10 @@ space_redirects = true
 [*.{py,ini}]
 max_line_length = 119
 
+[*.{yml,yaml}]
+indent_size = 2
+max_line_length = 119
+
 [Makefile]
 indent_style = tab
 
