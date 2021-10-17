@@ -28,6 +28,7 @@ setup(
     install_requires=requirements(),
     packages=find_packages(),
     zip_safe=False,
+    python_requires=">=3.5",
     include_package_data=True,
     platforms="any",
     classifiers=[
@@ -47,6 +48,7 @@ setup(
         "Topic :: Terminals",
         "Topic :: Utilities",
         "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
     ],
     keywords="progressbar progressmeter progress bar meter rate eta console terminal time",
 )
