@@ -13,9 +13,9 @@ class Command(BaseCommand):
                 sleep(0.02)
                 t.update(1)
                 if x == 10:
-                    t.info('info')
+                    t.info("info")
                 if x == 40:
-                    t.error('error')
+                    t.error("error")
 
         demo()
 

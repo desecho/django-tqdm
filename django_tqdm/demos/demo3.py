@@ -10,6 +10,6 @@ for x in range(50):
     sleep(0.02)
     t.update(1)
     if x == 25:
-        t.write('info')
+        t.write("info")
     if x == 40:
-        t.write('error', file=sys.stderr)
+        t.write("error", file=sys.stderr)
