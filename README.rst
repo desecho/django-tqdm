@@ -110,13 +110,6 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 
 |Demo3|
 
-Development
---------------
-
-| Use `clean.sh` to automatically prettify your code.
-| Use `tox` for testing and linting.
-
-
 .. |Demo1| image:: https://asciinema.org/a/117133.png
    :target: https://asciinema.org/a/117133
 

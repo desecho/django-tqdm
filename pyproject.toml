@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 119
+# python 3.9 is not supported yet
+target-version = ['py38']
+skip-string-normalization = false
+include = '\.pyi?$'
+exclude = '''
+/(
+    __pycache__
+    | \.hypothesis
+    | \.idea
+    | \.mypy_cache
+    | \.pytest_cache
+    | \.tox
+    | \.venv
+    | \.vscode
+    | venv
+    | htmlcov
+/)
+'''

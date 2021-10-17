@@ -1,35 +1,168 @@
-.PHONY: install upgrade flake8 coverage travis pylint bandit restructuredtext pydocstyle safety
+.DEFAULT_GOAL := help
 
-install:
-	pip install -r requirements-dev.txt
+SHELL := /bin/bash
+SOURCE_CMD := source venv/bin/activate
+
+#------------------------------------
+# Help
+#------------------------------------
+TARGET_MAX_CHAR_NUM := 25
+
+# COLORS
+RED     := \033[0;31m
+GREEN   := \033[0;32m
+YELLOW  := \033[0;33m
+BLUE    := \033[0;34m
+MAGENTA := \033[0;35m
+CYAN    := \033[0;36m
+WHITE   := \033[0;37m
+RESET   := \033[0;10m
+
+.PHONY: help
+## Show help | Help
+help:
+	@echo ''
+	@echo 'Usage:'
+	@printf "  ${YELLOW}make${RESET} ${GREEN}<target>${RESET}"
+	@echo ''
+	@echo ''
+	@echo 'Targets:'
+	@awk '/^[a-zA-Z\-\_0-9]+:/ { \
+		helpMessage = match(lastLine, /^## (.*)/); \
+		if (helpMessage) { \
+		    if (index(lastLine, "|") != 0) { \
+				stage = substr(lastLine, index(lastLine, "|") + 1); \
+				printf "\n ${GRAY}%s: \n", stage;  \
+			} \
+			helpCommand = substr($$1, 0, index($$1, ":")-1); \
+			helpMessage = substr(lastLine, RSTART + 3, RLENGTH); \
+			if (index(lastLine, "|") != 0) { \
+				helpMessage = substr(helpMessage, 0, index(helpMessage, "|")-1); \
+			} \
+			printf "    ${YELLOW}%-$(TARGET_MAX_CHAR_NUM)s${RESET} ${GREEN}%s${RESET}\n", helpCommand, helpMessage; \
+		} \
+	} \
+	{ lastLine = $$0 }' $(MAKEFILE_LIST)
+#------------------------------------
+
+#------------------------------------
+# Installation
+#------------------------------------
+
+.PHONY: install-deps
+## Install dependencies | Installation
+install-deps:
+	# Install Python
+	sudo apt install python3.9 python3.9-venv python3.9-dev -y
+
+.PHONY: create-venv
+## Create virtual environment and install requirements
+create-venv:
+	python3.9 -m venv venv
+	${SOURCE_CMD} && \
+		pip install -r requirements-dev.txt && \
+		pip install -e .
+
+.PHONY: bootstrap
+## Bootstrap project
+bootstrap: install-deps create-venv
+#------------------------------------
+
+
+#------------------------------------
+# Tox
+#------------------------------------
+.PHONY: test
+## Run tests | Tests
+test:
+	tox
+
+.PHONY: test-py39
+## Run tests for Python 3.9
+test-py39: pylint flake8 isort rstlint pydiatra pydocstyle safety pytest black shfmt shellcheck
+
+.PHONY: pydiatra
+## Run pydiatra
+pydiatra:
+	scripts/pydiatra.sh
+
+.PHONY: pylint
+## Run pylint
+pylint:
+	tox -e py39-pylint
+
+.PHONY: flake8
+## Run flake8
+flake8:
+	tox -e py39-flake8
+
+.PHONY: isort
+## Run isort
+isort:
+	tox -e py39-isort
+
+# .PHONY: bandit
+# ## Run bandit
+# bandit:
+# 	tox -e py39-bandit
+
+.PHONY: rstlint
+## Run rstlint
+rstlint:
+	tox -e py39-rstlint
+
+.PHONY: pydocstyle
+## Run pydocstyle
+pydocstyle:
+	tox -e py39-pydocstyle
+
+.PHONY: safety
+## Run safety
+safety:
+	tox -e py39-safety
+
+.PHONY: pytest
+## Run pytest
+pytest:
+	tox -e py39-pytest
+
+.PHONY: black
+## Run black linter
+black:
+	tox -e py39-black
+
+.PHONY: shfmt
+## Run shfmt linter
+shfmt:
+	tox -e py39-shfmt
+
+.PHONY: shellcheck
+## Run shellcheck linter
+shellcheck:
+	shellcheck scripts/*.sh
+
+#------------------------------------
+
+#------------------------------------
+# Development
+#------------------------------------
+.PHONY: update-venv
+## Update packages in venv and tox with current requirements | Development
+update-venv:
+	${SOURCE_CMD} && \
+	pip install -r requirements-dev.txt && \
+	pip install -e . && \
+	deactivate && \
+	source .tox/py39/bin/activate && \
+	pip install -r requirements-dev.txt && \
 	pip install -e .
 
-upgrade:
-	pip install -r requirements-dev.txt -U
-	pip install -e . -U
-
-flake8:
-	flake8
-
-pylint:
-	pylint django_tqdm
-
-isort:
-	isort --check-only --recursive --diff django_tqdm
-
-bandit:
-	bandit -r django_tqdm --exclude django_tqdm/tests
-
-coverage:
-	py.test --cov-report term-missing --cov django_tqdm --verbose
-
-restructuredtext:
-	python setup.py check --restructuredtext --metadata --strict
-
-pydocstyle:
-	pydocstyle --count
-
-safety:
-	safety check
-
-travis: install pylint flake8 isort bandit restructuredtext pydocstyle safety coverage
+.PHONY: format
+## Format code except for json files
+format:
+	${SOURCE_CMD} && \
+	autoflake --remove-all-unused-imports --in-place -r django_tqdm && \
+	isort django_tqdm && \
+	black .
+	shfmt -l -w .
+#------------------------------------

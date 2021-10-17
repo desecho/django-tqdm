@@ -1,28 +1,26 @@
 -r requirements.txt
 
-# Coverage
-codecov>=1.6
-
-
 # Pytest
-pytest>=3.6
-pytest-cov>=1.8
-pytest-sugar>=0.7.0
-pytest-mock>=1.6.0
-
+pytest
+pytest-cov
+pytest-sugar
+pytest-mock
 
 # Linting
-pylint>=1.7.1
-tox>=2.7.0
-isort>=4.2
-flake8>=2.2.5
-bandit<1.6.0
-pydocstyle>=2.1.1
-safety>=1.6.1
+pylint
+isort
+flake8
+# Currently there is an issue with files not being excluded
+# https://github.com/PyCQA/bandit/issues/499
+# https://github.com/PyCQA/bandit/issues/693
+# Removed until Python 3.9 is supported - https://github.com/PyCQA/bandit/issues/706
+# bandit<1.6.0
+pydiatra
+pydocstyle
+safety
+autoflake
+black
 
-# reStructuredText
-docutils>=0.14
-pygments>=2.2.0
-
-# We don't actually need it but for some reason it appears in safety and tox fails.
-numpy>=1.16.0
+# Restructured text Linting
+pygments
+restructuredtext_lint
