@@ -20,5 +20,5 @@ class Command(BaseCommand):
         demo()
 
 
-demo = Command()
-demo.handle()
+demo2 = Command()
+demo2.handle()
