@@ -1,14 +1,14 @@
 django-tqdm
 ==============
 
-|PyPI-Status| |PyPI-Versions| |LICENSE| |Travis| |Codecov| |Requirements| |Downloads|
+|PyPI-Status| |PyPI-Versions| |LICENSE| |Tests| |Codecov| |Requirements| |Downloads|
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
-| Use tqdm_ in Django management commands seamlessly.
+| Use tqdm_ in Django_ management commands seamlessly.
 | It provides simple universal commands for Django management command to output
   text using standard command functions and tqdm.
-| Currently supported versions of Django_ are supported.
+| Only currently supported versions of Django and Python are supported.
 
 Usage
 -----
@@ -21,8 +21,8 @@ Usage
     class Command(BaseCommand):
         def handle(self, *args, **options):
             # Output directly
-            self.error('Error')
-            self.info('Info')
+            self.error("Error")
+            self.info("Info")
 
             # Output through tqdm
             t = self.tqdm(total=50)
@@ -31,19 +31,19 @@ Usage
                 t.update(1)
 
                 if x == 10:
-                    t.info('X = 10')
+                    t.info("X = 10")
                 if x == 20:
-                    t.error('X = 20')
+                    t.error("X = 20")
 
 Advanced:
 
 .. code:: python
 
-    info(text, ending='\n', fatal=False)
-    error(text, ending='\n', fatal=False)
-    write(text, ending='\n', fatal=False, error=False)
+    info(text, ending="\n", fatal=False)
+    error(text, ending="\n", fatal=False)
+    write(text, ending="\n", fatal=False, error=False)
 
-If you set `fatal` to `True` it will terminate the command after printing the message.
+If you set ``fatal`` to ``True`` it will terminate the command after printing the message.
 
 For documentation on tqdm see tqdm_.
 
@@ -54,15 +54,15 @@ In django-tqdm:
 
 .. code:: python
 
-    self.info('info')
-    self.error('error')
+    self.info("info")
+    self.error("error")
 
 In vanilla Django:
 
 .. code:: python
 
-    self.stdout.write('info')
-    self.stderr.write('error')
+    self.stdout.write("info")
+    self.stderr.write("error")
 
 
 Demos
@@ -73,8 +73,8 @@ Demo 1 - Simple usage
 
 .. code:: python
 
-    self.info('info')
-    self.error('error')
+    self.info("info")
+    self.error("error")
 
 |Demo1|
 
@@ -88,9 +88,9 @@ Demo 2 - tqdm usage
         sleep(0.02)
         t.update(1)
         if x == 10:
-            t.info('info')
+            t.info("info")
         if x == 40:
-            t.error('error')
+            t.error("error")
 
 |Demo2|
 
@@ -104,9 +104,9 @@ Demo 3 - Vanilla tqdm with default settings for comparison
         sleep(0.02)
         t.update(1)
         if x == 25:
-            t.write('info')
+            t.write("info")
         if x == 40:
-            t.write('error', file=sys.stderr)
+            t.write("error", file=sys.stderr)
 
 |Demo3|
 
@@ -128,8 +128,8 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 .. |LICENSE| image:: https://img.shields.io/pypi/l/django-tqdm.svg
    :target: https://raw.githubusercontent.com/desecho/django-tqdm/master/LICENSE
 
-.. |Travis| image:: https://travis-ci.org/desecho/django-tqdm.svg?branch=master
-    :target: https://travis-ci.org/desecho/django-tqdm
+.. |Tests| image:: https://github.com/desecho/django-tqdm/actions/workflows/test.yaml/badge.svg?branch=master
+    :target: https://github.com/desecho/django-tqdm/actions/workflows/test.yaml
 
 .. |Codecov| image:: https://codecov.io/gh/desecho/django-tqdm/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/desecho/django-tqdm
