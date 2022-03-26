@@ -1,0 +1,27 @@
+name: Release
+on:
+  workflow_dispatch:
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install release requirements
+        run: sudo pip3 install twine
+
+      - name: Build wheel
+        run: python3 setup.py bdist_wheel
+
+      - name: Release
+        run: twine upload dist/*
+        env:
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
