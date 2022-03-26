@@ -10,11 +10,7 @@ pytest-mock
 pylint
 isort
 flake8
-# Currently there is an issue with files not being excluded
-# https://github.com/PyCQA/bandit/issues/499
-# https://github.com/PyCQA/bandit/issues/693
-# Removed until Python 3.9 is supported - https://github.com/PyCQA/bandit/issues/706
-# bandit<1.6.0
+bandit
 pydiatra
 pydocstyle
 safety
