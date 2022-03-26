@@ -31,7 +31,8 @@ jobs:
 
       - name: Install test requirements
         run: |
-          sudo curl https://github.com/mvdan/sh/releases/download/v3.4.0/shfmt_v3.4.0_linux_amd64 -Lo /usr/local/bin/shfmt
+          SHFTM_VERSION=3.4.3
+          sudo curl https://github.com/mvdan/sh/releases/download/v${SHFTM_VERSION}/shfmt_v${SHFTM_VERSION}_linux_amd64 -Lo /usr/local/bin/shfmt
           sudo chmod +x /usr/local/bin/shfmt
           sudo apt install shellcheck -y
           pip install tox
