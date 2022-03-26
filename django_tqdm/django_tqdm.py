@@ -44,7 +44,9 @@ class Tqdm(tqdm, OutputBase):  # pylint: disable=no-member
             kwargs["leave"] = False
         super().__init__(*args, **kwargs)
 
-    def write(self, text, file=sys.stdout, ending="\n", fatal=False, error=False):  # pylint: disable=redefined-builtin
+    def write(
+        self, text, file=sys.stdout, ending="\n", fatal=False, error=False
+    ):  # pylint: disable=redefined-builtin,arguments-renamed
         if self.isatty:
             if error:
                 text = color_style().ERROR(text)
