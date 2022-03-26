@@ -18,7 +18,7 @@ def requirements():
 
 setup(
     name="django_tqdm",
-    version="1.0.0",
+    version="1.1.0",
     url="https://github.com/desecho/django-tqdm",
     project_urls={"Changelog": "https://github.com/desecho/django-tqdm/blob/master/CHANGELOG.md"},
     license="MIT",
