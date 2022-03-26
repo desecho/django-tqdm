@@ -77,10 +77,6 @@ bootstrap: install-deps create-venv
 test:
 	tox
 
-.PHONY: test-py39
-## Run tests for Python 3.9
-test-py39: pylint flake8 isort rstlint pydiatra pydocstyle safety pytest black shfmt shellcheck
-
 .PHONY: pydiatra
 ## Run pydiatra
 pydiatra:
@@ -89,52 +85,52 @@ pydiatra:
 .PHONY: pylint
 ## Run pylint
 pylint:
-	tox -e py39-pylint
+	tox -e py-pylint
 
 .PHONY: flake8
 ## Run flake8
 flake8:
-	tox -e py39-flake8
+	tox -e py-flake8
 
 .PHONY: isort
 ## Run isort
 isort:
-	tox -e py39-isort
+	tox -e py-isort
 
 # .PHONY: bandit
 # ## Run bandit
 # bandit:
-# 	tox -e py39-bandit
+# 	tox -e py-bandit
 
 .PHONY: rstlint
 ## Run rstlint
 rstlint:
-	tox -e py39-rstlint
+	tox -e py-rstlint
 
 .PHONY: pydocstyle
 ## Run pydocstyle
 pydocstyle:
-	tox -e py39-pydocstyle
+	tox -e py-pydocstyle
 
 .PHONY: safety
 ## Run safety
 safety:
-	tox -e py39-safety
+	tox -e py-safety
 
 .PHONY: pytest
 ## Run pytest
 pytest:
-	tox -e py39-pytest
+	tox -e py-pytest
 
 .PHONY: black
 ## Run black linter
 black:
-	tox -e py39-black
+	tox -e py-black
 
 .PHONY: shfmt
 ## Run shfmt linter
 shfmt:
-	tox -e py39-shfmt
+	tox -e py-shfmt
 
 .PHONY: shellcheck
 ## Run shellcheck linter
@@ -153,7 +149,7 @@ update-venv:
 	pip install -r requirements-dev.txt && \
 	pip install -e . && \
 	deactivate && \
-	source .tox/py39/bin/activate && \
+	source .tox/py/bin/activate && \
 	pip install -r requirements-dev.txt && \
 	pip install -e .
 
