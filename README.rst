@@ -140,7 +140,7 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 
 .. |Downloads| image:: https://pepy.tech/badge/django-tqdm
      :target: https://pepy.tech/project/django-tqdm
-     :alt: RequiDownloads
+     :alt: Downloads
 
 .. _tqdm: https://github.com/tqdm/tqdm
 .. _Django: https://www.djangoproject.com
