@@ -110,6 +110,13 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 
 |Demo3|
 
+
+Developer documentation
+-------------------------
+
+Read `developer documentation`_.
+
+
 .. |Demo1| image:: https://asciinema.org/a/117133.png
    :target: https://asciinema.org/a/117133
 
@@ -144,3 +151,4 @@ Demo 3 - Vanilla tqdm with default settings for comparison
 
 .. _tqdm: https://github.com/tqdm/tqdm
 .. _Django: https://www.djangoproject.com
+.. _developer documentation: https://github.com/desecho/django-tqdm/blob/master/developer_doc.md
