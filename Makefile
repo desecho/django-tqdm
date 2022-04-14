@@ -38,42 +38,42 @@ test:
 	tox
 
 .PHONY: pydiatra
-## Run pydiatra
+## Run pydiatra linter
 pydiatra:
 	scripts/pydiatra.sh
 
 .PHONY: pylint
-## Run pylint
+## Run pylint linter
 pylint:
 	tox -e py-pylint
 
 .PHONY: flake8
-## Run flake8
+## Run flake8 linter
 flake8:
 	tox -e py-flake8
 
 .PHONY: isort
-## Run isort
+## Run isort linter
 isort:
 	tox -e py-isort
 
 .PHONY: bandit
-## Run bandit
+## Run bandit linter
 bandit:
 	tox -e py-bandit
 
 .PHONY: rstlint
-## Run rstlint
+## Run rstlint linter
 rstlint:
 	tox -e py-rstlint
 
 .PHONY: pydocstyle
-## Run pydocstyle
+## Run pydocstyle linter
 pydocstyle:
 	tox -e py-pydocstyle
 
 .PHONY: safety
-## Run safety
+## Run safety linter
 safety:
 	tox -e py-safety
 
@@ -114,7 +114,7 @@ update-venv:
 	pip install -e .
 
 .PHONY: format
-## Format code except for json files
+## Format code
 format:
 	${SOURCE_CMD} && \
 	autoflake --remove-all-unused-imports --in-place -r django_tqdm && \
