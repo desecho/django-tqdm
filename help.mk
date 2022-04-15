@@ -1,9 +1,9 @@
 TARGET_MAX_CHAR_NUM := 25
 
 # COLORS
-GREEN   := \033[0;32m
-YELLOW  := \033[0;33m
-RESET   := \033[0;10m
+GREEN  := \033[0;32m
+YELLOW := \033[0;33m
+RESET  := \033[0;10m
 
 .PHONY: help
 ## Show help | Help
@@ -19,7 +19,7 @@ help:
 		if (helpMessage) { \
 		    if (index(lastLine, "|") != 0) { \
 				stage = substr(lastLine, index(lastLine, "|") + 1); \
-				printf "\n ${GRAY}%s: \n", stage;  \
+				printf "\n %s: \n", stage;  \
 			} \
 			helpCommand = substr($$1, 0, index($$1, ":")-1); \
 			helpMessage = substr(lastLine, RSTART + 3, RLENGTH); \
