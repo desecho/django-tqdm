@@ -40,8 +40,5 @@ jobs:
       - name: Run tests
         run: make test
 
-      - name: Install codecov requirements
-        run: pip install coverage
-
       - name: Run codecov
         uses: codecov/codecov-action@v2
