@@ -32,8 +32,6 @@ class Command(BaseCommand):
         def fatal():
             self.error("error", fatal=True)
 
-        # pylint gives errors when it is used
-        # locals()[name]()
         if name == "basic":
             basic()
         elif name == "tqdm":

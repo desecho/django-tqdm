@@ -9,7 +9,7 @@ from django.core.management.color import color_style
 from tqdm import tqdm
 
 
-class OutputBase:  # pylint: disable=bad-option-value
+class OutputBase:
     def error(self, text, ending="\n", fatal=False):
         self.write(text, ending=ending, fatal=fatal, error=True)
 
@@ -17,7 +17,7 @@ class OutputBase:  # pylint: disable=bad-option-value
         self.write(text, ending=ending, fatal=fatal)
 
 
-class BaseCommand(BaseCommandOriginal, OutputBase):  # pylint: disable=no-member,abstract-method
+class BaseCommand(BaseCommandOriginal, OutputBase):
     def write(self, text, ending="\n", fatal=False, error=False):
         if error:
             output = self.stderr
@@ -31,7 +31,7 @@ class BaseCommand(BaseCommandOriginal, OutputBase):  # pylint: disable=no-member
         return Tqdm(command=self, *args, **kwargs)
 
 
-class Tqdm(tqdm, OutputBase):  # pylint: disable=no-member
+class Tqdm(tqdm, OutputBase):
     def __init__(self, *args, **kwargs):
         self.command = kwargs.pop("command")
         self.isatty = self.command.stdout.isatty()
@@ -44,9 +44,7 @@ class Tqdm(tqdm, OutputBase):  # pylint: disable=no-member
             kwargs["leave"] = False
         super().__init__(*args, **kwargs)
 
-    def write(
-        self, text, file=sys.stdout, ending="\n", fatal=False, error=False
-    ):  # pylint: disable=redefined-builtin,arguments-renamed
+    def write(self, text, file=sys.stdout, ending="\n", fatal=False, error=False):  # pylint: disable=arguments-renamed
         if self.isatty:
             if error:
                 text = color_style().ERROR(text)
