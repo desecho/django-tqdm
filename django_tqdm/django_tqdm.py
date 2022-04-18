@@ -1,7 +1,5 @@
 """Fast, Extensible Progress Meter (tqdm) For Django."""
 
-from __future__ import unicode_literals
-
 import sys
 
 from django.core.management.base import BaseCommand as BaseCommandOriginal
