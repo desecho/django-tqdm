@@ -8,10 +8,18 @@ SOURCE_CMD := source venv/bin/activate
 #------------------------------------
 # Installation
 #------------------------------------
+SHFMT_VERSION := 3.4.3
+SHFMT_PATH := /usr/local/bin/shfmt
+
+.PHONY: install-shfmt
+## Install shfmt | Installation
+install-shfmt:
+	sudo curl https://github.com/mvdan/sh/releases/download/v${SHFMT_VERSION}/shfmt_v${SHFMT_VERSION}_linux_amd64 -Lo ${SHFMT_PATH}
+	sudo chmod +x ${SHFMT_PATH}
 
 .PHONY: install-deps
-## Install dependencies | Installation
-install-deps:
+## Install dependencies
+install-deps: install-shfmt
 	# Install Python
 	sudo apt install python3.9 python3.9-venv python3.9-dev -y
 
@@ -97,6 +105,10 @@ shfmt:
 shellcheck:
 	shellcheck scripts/*.sh
 
+.PHONY: yamllint
+## Run yamllint linter
+yamllint:
+	tox -e py-yamllint
 #------------------------------------
 
 #------------------------------------
