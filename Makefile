@@ -4,6 +4,7 @@ include help.mk
 
 SHELL := /bin/bash
 SOURCE_CMD := source venv/bin/activate
+PYTHON := python3.10
 
 #------------------------------------
 # Installation
@@ -21,12 +22,12 @@ install-shfmt:
 ## Install dependencies
 install-deps: install-shfmt
 	# Install Python
-	sudo apt install python3.9 python3.9-venv python3.9-dev -y
+	sudo apt install ${PYTHON} ${PYTHON}-venv ${PYTHON}-dev -y
 
 .PHONY: create-venv
 ## Create virtual environment and install requirements
 create-venv:
-	python3.9 -m venv venv
+	${PYTHON} -m venv venv
 	${SOURCE_CMD} && \
 		pip install -r requirements-dev.txt && \
 		pip install -e .
