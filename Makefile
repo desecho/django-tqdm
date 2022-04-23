@@ -37,19 +37,26 @@ create-venv:
 bootstrap: install-deps create-venv
 #------------------------------------
 
+#------------------------------------
+# Scripts
+#------------------------------------
+.PHONY: pydiatra-script
+pydiatra-script:
+	scripts/pydiatra.sh
+#------------------------------------
 
 #------------------------------------
-# Tox
+# Tests
 #------------------------------------
 .PHONY: test
 ## Run tests | Tests
-test:
+test: shfmt shellcheck
 	tox
 
 .PHONY: pydiatra
 ## Run pydiatra linter
 pydiatra:
-	scripts/pydiatra.sh
+	tox -e py-pydiatra
 
 .PHONY: pylint
 ## Run pylint linter
@@ -96,20 +103,21 @@ pytest:
 black:
 	tox -e py-black
 
+.PHONY: yamllint
+## Run yamllint linter
+yamllint:
+	tox -e py-yamllint
+
 .PHONY: shfmt
 ## Run shfmt linter
 shfmt:
-	tox -e py-shfmt
+	shfmt -l -d .
 
 .PHONY: shellcheck
 ## Run shellcheck linter
 shellcheck:
 	shellcheck scripts/*.sh
 
-.PHONY: yamllint
-## Run yamllint linter
-yamllint:
-	tox -e py-yamllint
 #------------------------------------
 
 #------------------------------------
