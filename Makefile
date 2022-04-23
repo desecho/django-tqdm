@@ -18,6 +18,11 @@ install-shfmt:
 	sudo curl https://github.com/mvdan/sh/releases/download/v${SHFMT_VERSION}/shfmt_v${SHFMT_VERSION}_linux_amd64 -Lo ${SHFMT_PATH}
 	sudo chmod +x ${SHFMT_PATH}
 
+.PHONY: install-twine
+## Install twine
+install-twine:
+	sudo pip3 install twine
+
 .PHONY: install-test-deps
 ## Install test dependencies
 install-test-deps: install-shfmt
@@ -122,7 +127,6 @@ shfmt:
 ## Run shellcheck linter
 shellcheck:
 	shellcheck scripts/*.sh
-
 #------------------------------------
 
 #------------------------------------
@@ -147,4 +151,13 @@ format:
 	isort django_tqdm && \
 	black .
 	shfmt -l -w .
+#------------------------------------
+
+#------------------------------------
+# Commands
+#------------------------------------
+.PHONY: build-wheel
+## Build wheel | Commands
+build-wheel:
+	python3 setup.py bdist_wheel
 #------------------------------------

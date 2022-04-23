@@ -1,10 +1,12 @@
 ---
-name: Release
+name: Test Release
 on:
   workflow_dispatch:
+    branches:
+      - dev
 jobs:
-  release:
-    name: Release
+  test_release:
+    name: Test Release
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
@@ -22,7 +24,7 @@ jobs:
         run: make build-wheel
 
       - name: Release
-        run: twine upload dist/*
+        run: twine upload -r testpypi dist/*
         env:
-          TWINE_USERNAME: desecho
-          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+          TWINE_USERNAME: scrap
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD_TEST }}
