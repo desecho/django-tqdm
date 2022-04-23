@@ -28,6 +28,7 @@ install-twine:
 install-test-deps: install-shfmt
 	sudo apt install shellcheck -y
 	sudo pip3 install tox
+	sudo npm install -g markdownlint-cli
 
 .PHONY: install-deps
 ## Install dependencies
@@ -61,7 +62,7 @@ pydiatra-script:
 #------------------------------------
 .PHONY: test
 ## Run tests | Tests
-test: shfmt shellcheck
+test: shfmt shellcheck markdownlint
 	tox
 
 .PHONY: pydiatra
@@ -128,6 +129,11 @@ shfmt:
 ## Run shellcheck linter
 shellcheck:
 	shellcheck scripts/*.sh
+
+.PHONY: markdownlint
+## Run markdownlint linter
+markdownlint:
+	markdownlint CHANGELOG.md developer_doc.md
 #------------------------------------
 
 #------------------------------------
@@ -152,6 +158,7 @@ format:
 	isort django_tqdm && \
 	black .
 	shfmt -l -w .
+	markdownlint CHANGELOG.md developer_doc.md --fix
 #------------------------------------
 
 #------------------------------------
