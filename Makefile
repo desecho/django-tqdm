@@ -62,7 +62,11 @@ pydiatra-script:
 #------------------------------------
 .PHONY: test
 ## Run tests | Tests
-test: shfmt shellcheck markdownlint
+test: shfmt shellcheck markdownlint tox
+
+.PHONY: tox
+## Run tox
+tox:
 	tox
 
 .PHONY: pydiatra
