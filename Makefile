@@ -18,9 +18,14 @@ install-shfmt:
 	sudo curl https://github.com/mvdan/sh/releases/download/v${SHFMT_VERSION}/shfmt_v${SHFMT_VERSION}_linux_amd64 -Lo ${SHFMT_PATH}
 	sudo chmod +x ${SHFMT_PATH}
 
+.PHONY: install-test-deps
+## Install test dependencies
+install-test-deps: install-shfmt
+	sudo apt install shellcheck -y
+
 .PHONY: install-deps
 ## Install dependencies
-install-deps: install-shfmt
+install-deps:
 	# Install Python
 	sudo apt install ${PYTHON} ${PYTHON}-venv ${PYTHON}-dev -y
 
@@ -34,7 +39,7 @@ create-venv:
 
 .PHONY: bootstrap
 ## Bootstrap project
-bootstrap: install-deps create-venv
+bootstrap: install-deps install-test-deps create-venv
 #------------------------------------
 
 #------------------------------------

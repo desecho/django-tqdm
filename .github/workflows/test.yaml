@@ -31,8 +31,7 @@ jobs:
 
       - name: Install test requirements
         run: |
-          make install-shfmt
-          sudo apt install shellcheck -y
+          make install-test-deps
           pip install tox
 
       - name: Run tests
