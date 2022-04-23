@@ -32,7 +32,6 @@ jobs:
       - name: Install test requirements
         run: |
           make install-test-deps
-          pip install tox
 
       - name: Run tests
         run: make test

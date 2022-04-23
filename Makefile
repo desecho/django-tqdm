@@ -27,6 +27,7 @@ install-twine:
 ## Install test dependencies
 install-test-deps: install-shfmt
 	sudo apt install shellcheck -y
+	sudo pip3 install tox
 
 .PHONY: install-deps
 ## Install dependencies
