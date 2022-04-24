@@ -5,8 +5,6 @@ max-line-length: 119
 output-format=colorized
 
 [MESSAGES CONTROL]
-# Disable import-error because it seem to give incorrect errors.
 # Disable no-member because looks like it is being detected improperly.
 # Disable invalid-name because it seem to mostly work incorrectly
-# Disable line-too-long because it is handled by black
-disable=import-error,no-member,invalid-name,line-too-long,missing-docstring,too-many-arguments,arguments-differ,too-few-public-methods,fixme,abstract-method,too-many-locals,too-many-ancestors
+disable=no-member,invalid-name,missing-docstring,too-many-arguments,arguments-differ,too-few-public-methods,fixme,abstract-method,too-many-locals,too-many-ancestors
