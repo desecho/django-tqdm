@@ -4,7 +4,6 @@
 
 ## 1.2.0
 
-- Add annotations
 - Remove demos and tests directories from the package
 
 ## 1.1.0
