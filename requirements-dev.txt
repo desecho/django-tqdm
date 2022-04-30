@@ -17,7 +17,11 @@ safety
 autoflake
 black
 yamllint
+mypy
 
 # Restructured text Linting
 pygments
 restructuredtext_lint
+
+# Stubs
+django-stubs

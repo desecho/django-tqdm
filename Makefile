@@ -124,6 +124,11 @@ black:
 yamllint:
 	tox -e py-yamllint
 
+.PHONY: mypy
+## Run mypy linter
+mypy:
+	tox -e py-mypy
+
 .PHONY: shfmt
 ## Run shfmt linter
 shfmt:
