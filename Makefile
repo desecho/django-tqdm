@@ -164,7 +164,7 @@ update-venv:
 format:
 	${SOURCE_CMD} && \
 	autoflake --remove-all-unused-imports --in-place -r django_tqdm && \
-	isort django_tqdm && \
+	isort django_tqdm demos tests && \
 	black .
 	shfmt -l -w .
 	markdownlint CHANGELOG.md developer_doc.md --fix
