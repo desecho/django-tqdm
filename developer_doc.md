@@ -10,6 +10,7 @@ The following GitHub Actions are used:
 * [Checkout](https://github.com/marketplace/actions/checkout)
 * [Setup Python](https://github.com/marketplace/actions/setup-python)
 * [Codecov](https://github.com/marketplace/actions/codecov)
+* [Cache](https://github.com/marketplace/actions/cache)
 
 ## Release process
 
