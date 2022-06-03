@@ -1,3 +1,6 @@
+[MASTER]
+load-plugins=pylint.extensions.no_self_use
+
 [FORMAT]
 max-line-length: 119
 
