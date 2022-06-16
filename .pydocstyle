@@ -1,0 +1,5 @@
+[pydocstyle]
+
+# Disable D212 because D212 and D213 are mutually exclusive.
+# Disable D203 because D203 and D211 are mutually exclusive.
+ignore = D203,D212

@@ -7,8 +7,13 @@ from django_tqdm import BaseCommand
 
 
 class Command(BaseCommand):
+    """Command."""
+
     def handle(self, *args: Any, **options: Any) -> None:
-        def demo() -> None:
+        """Execute command."""
+
+        def demo() -> None:  # pylint: disable=duplicate-code
+            """Demo."""
             t = self.tqdm(total=50)
             for x in range(50):
                 sleep(0.02)

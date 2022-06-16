@@ -6,8 +6,13 @@ from django_tqdm import BaseCommand
 
 
 class Command(BaseCommand):
+    """Command."""
+
     def handle(self, *args: Any, **options: Any) -> None:
+        """Execute command."""
+
         def demo() -> None:  # pylint: disable=duplicate-code
+            """Demo."""
             self.info("info")
             self.error("error")
 
