@@ -168,6 +168,15 @@ format:
 	black .
 	shfmt -l -w .
 	markdownlint CHANGELOG.md developer_doc.md --fix
+
+.PHONY: delete-venv
+delete-venv:
+	rm -rf venv
+	rm -rf .tox
+
+.PHONY: recreate-venv
+## Recreate venv
+recreate-venv: delete-venv create-venv
 #------------------------------------
 
 #------------------------------------
