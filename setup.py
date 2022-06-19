@@ -12,4 +12,6 @@ def requirements():
 
 setup(
     install_requires=requirements(),
+    packages=["django_tqdm"],
+    package_data={"django_tqdm": ["py.typed"]},
 )
