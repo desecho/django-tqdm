@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.1
+
+- Bugfix: mark package with py.typed to be able to properly use annotations
+
 ## 1.3.0
 
 - Add stubs
