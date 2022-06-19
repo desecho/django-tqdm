@@ -9,14 +9,29 @@ PYTHON := python3.10
 #------------------------------------
 # Installation
 #------------------------------------
+BIN_DIR := /usr/local/bin
+
 SHFMT_VERSION := 3.4.3
-SHFMT_PATH := /usr/local/bin/shfmt
+SHFMT_PATH := ${BIN_DIR}/shfmt
 
 .PHONY: install-shfmt
 ## Install shfmt | Installation
 install-shfmt:
 	sudo curl https://github.com/mvdan/sh/releases/download/v${SHFMT_VERSION}/shfmt_v${SHFMT_VERSION}_linux_amd64 -Lo ${SHFMT_PATH}
 	sudo chmod +x ${SHFMT_PATH}
+
+ACTIONLINT_VERSION := 1.6.13
+ACTIONLINT_PATH := ${BIN_DIR}/actionlint
+ACTIONLINT_URL := https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz
+ACTIONLINT_TMP_DIR := $(shell mktemp -d)
+ACTIONLINT_ARCHIVE := actionlint.tar.gz
+.PHONY: install-actionlint
+## Install actionlint
+install-actionlint:
+	cd ${ACTIONLINT_TMP_DIR} && \
+	curl ${ACTIONLINT_URL} -Lo ${ACTIONLINT_ARCHIVE} && \
+	tar -xvf ${ACTIONLINT_ARCHIVE} && \
+	sudo mv actionlint ${ACTIONLINT_PATH}
 
 .PHONY: install-twine
 ## Install twine
@@ -25,7 +40,7 @@ install-twine:
 
 .PHONY: install-test-deps
 ## Install test dependencies
-install-test-deps: install-shfmt
+install-test-deps: install-shfmt install-actionlint
 	sudo apt install shellcheck -y
 	sudo pip3 install tox
 	sudo npm install -g markdownlint-cli
@@ -62,7 +77,7 @@ pydiatra-script:
 #------------------------------------
 .PHONY: test
 ## Run tests | Tests
-test: shfmt shellcheck markdownlint tox
+test: shfmt shellcheck markdownlint actionlint tox
 
 .PHONY: tox
 ## Run tox
@@ -143,6 +158,11 @@ shellcheck:
 ## Run markdownlint linter
 markdownlint:
 	markdownlint CHANGELOG.md developer_doc.md
+
+.PHONY: actionlint
+## Run actionlint linter
+actionlint:
+	actionlint
 #------------------------------------
 
 #------------------------------------
