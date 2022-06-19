@@ -23,6 +23,9 @@ class OutputBase:
 class Tqdm(tqdm, OutputBase):
     """Tqdm."""
 
+    command: "BaseCommand"
+    isatty: bool
+
     def __init__(self, *args: Any, **kwargs: Any):
         """Init."""
         self.command = kwargs.pop("command")
