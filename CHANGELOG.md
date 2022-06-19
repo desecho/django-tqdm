@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.0
+
+- Add stubs
+
 ## 1.2.0
 
 - Remove demos and tests directories from the package
