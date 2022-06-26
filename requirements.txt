@@ -1,2 +1,2 @@
 tqdm>=4.63.0
-Django>=2.2
+Django>=3.2

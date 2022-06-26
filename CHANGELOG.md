@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Drop Django 2 support
+
 ## 1.3.1
 
 - Bugfix: mark package with py.typed to be able to properly use annotations
