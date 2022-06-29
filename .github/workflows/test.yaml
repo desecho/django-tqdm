@@ -55,6 +55,7 @@ jobs:
       - name: Install test requirements
         run: |
           make install-test-deps
+          sudo npm install -g prettier
 
       - name: Run tests
         run: make test

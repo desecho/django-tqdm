@@ -134,11 +134,6 @@ pytest:
 black:
 	tox -e py-black
 
-.PHONY: yamllint
-## Run yamllint linter
-yamllint:
-	tox -e py-yamllint
-
 .PHONY: mypy
 ## Run mypy linter
 mypy:
@@ -163,6 +158,11 @@ markdownlint:
 ## Run actionlint linter
 actionlint:
 	actionlint
+
+.PHONY: prettier-yaml-lint
+## Run yaml linter
+prettier-yaml-lint:
+	yarn run prettier --check ./.github/**/*.yaml
 #------------------------------------
 
 #------------------------------------
@@ -188,6 +188,7 @@ format:
 	black .
 	shfmt -l -w .
 	markdownlint CHANGELOG.md developer_doc.md --fix
+	prettier --write ./.github/**/*.yaml
 
 .PHONY: delete-venv
 delete-venv:
