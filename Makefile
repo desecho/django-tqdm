@@ -79,7 +79,7 @@ create-venvs: create-venv create-tox-venv
 
 .PHONY: bootstrap
 ## Bootstrap project
-bootstrap: install-deps install-test-deps create-venv
+bootstrap: create-venvs
 #------------------------------------
 
 #------------------------------------

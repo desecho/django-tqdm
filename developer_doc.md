@@ -16,3 +16,13 @@ The following GitHub Actions are used:
 * Tag a commit with a new version
 * Create a release with GitHub
 * Run a release workflow for the new tag
+
+## Development
+
+You can use [ubuntu-vm](https://github.com/desecho/ubuntu-vm) as a development VM if needed.
+
+Also you can use [macos-setup](https://github.com/desecho/macos-setup) if you are on Mac.
+
+1. Run ``make install-deps`` if necessary (only on Ubuntu)
+2. Run ``make install-test-deps`` if necessary (only on Ubuntu)
+3. Run ``make bootstrap``
