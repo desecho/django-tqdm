@@ -1,5 +1,13 @@
 # Developer documentation
 
+## Cron jobs
+
+Cron jobs are run with [GitHub Actions](https://github.com/features/actions). Time zone is UTC.
+
+* `Update GitHub actions` runs at 04:00 UTC (00:00 EDT) on the first day of the month
+
+## CI/CD
+
 [GitHub Actions](https://github.com/features/actions) are used for testing and releasing.
 
 Tests are automatically run on pull requests and in master or dev branches.
