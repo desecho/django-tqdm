@@ -1,0 +1,32 @@
+---
+name: Update GitHub Actions
+on:
+  schedule:
+    - cron: "0 4 1 * *" # Runs at 04:00 UTC (00:00 EDT) on the first day of the month
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+jobs:
+  update_gitub_actions:
+    name: Update GitHub actions
+    runs-on: ubuntu-latest
+    env:
+      COMMITTER_USERNAME: Anton Samarchyan
+      COMMITTER_EMAIL: desecho@gmail.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.0.2
+        # with:
+        #   # Access token with `workflow` scope is required
+        #   token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+
+      - name: Run GitHub Actions Version Updater
+        uses: saadmk11/github-actions-version-updater@main
+        with:
+          committer_username: ${{ env.COMMITTER_USERNAME }}
+          committer_email: ${{ env.COMMITTER_EMAIL }}
+          commit_message: Update GitHub actions
+          pull_request_title: Update GitHub actions
+          # Access token with `workflow` scope is required
+          token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+          ignore: '["saadmk11/github-actions-version-updater@main"]'
