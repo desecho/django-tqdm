@@ -1,7 +1,7 @@
 django-tqdm
 ==============
 
-|PyPI-Status| |PyPI-Versions| |LICENSE| |Tests| |Codecov| |Requirements| |Downloads|
+|PyPI| |PyPI-Versions| |LICENSE| |Tests| |Codecov| |Requirements| |Downloads| |Weekly Downloads|
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
@@ -119,35 +119,47 @@ Read `developer documentation`_.
 
 .. |Demo1| image:: https://asciinema.org/a/117133.png
    :target: https://asciinema.org/a/117133
+   :alt: Demo #1
 
 .. |Demo2| image:: https://asciinema.org/a/117136.png
    :target: https://asciinema.org/a/117136
+   :alt: Demo #2
 
 .. |Demo3| image:: https://asciinema.org/a/117137.png
    :target: https://asciinema.org/a/117137
+   :alt: Demo #3
 
-.. |PyPI-Status| image:: https://img.shields.io/pypi/v/django-tqdm.svg
+.. |PyPI| image:: https://img.shields.io/pypi/v/django-tqdm.svg
    :target: https://pypi.python.org/pypi/django-tqdm
+   :alt: PyPI
 
 .. |PyPI-Versions| image:: https://img.shields.io/pypi/pyversions/django-tqdm.svg
    :target: https://pypi.python.org/pypi/django-tqdm
+   :alt: PyPI Versions
 
 .. |LICENSE| image:: https://img.shields.io/pypi/l/django-tqdm.svg
    :target: https://raw.githubusercontent.com/desecho/django-tqdm/master/LICENSE
+   :alt: License
 
 .. |Tests| image:: https://github.com/desecho/django-tqdm/actions/workflows/test.yaml/badge.svg?branch=master
-    :target: https://github.com/desecho/django-tqdm/actions/workflows/test.yaml
+   :target: https://github.com/desecho/django-tqdm/actions/workflows/test.yaml
+   :alt: Tests
 
 .. |Codecov| image:: https://codecov.io/gh/desecho/django-tqdm/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/desecho/django-tqdm
+   :target: https://codecov.io/gh/desecho/django-tqdm
+   :alt: Code coverage
 
 .. |Requirements| image:: https://requires.io/github/desecho/django-tqdm/requirements.svg?branch=master
-     :target: https://requires.io/github/desecho/django-tqdm/requirements/?branch=master
-     :alt: Requirements Status
+   :target: https://requires.io/github/desecho/django-tqdm/requirements/?branch=master
+   :alt: Requirements Status
 
 .. |Downloads| image:: https://pepy.tech/badge/django-tqdm
-     :target: https://pepy.tech/project/django-tqdm
-     :alt: Downloads
+   :target: https://pepy.tech/project/django-tqdm
+   :alt: Downloads
+
+.. |Weekly Downloads| image:: https://pepy.tech/badge/django-tqdm/week
+   :target: https://pepy.tech/project/django-tqdm
+   :alt: Weekly Downloads
 
 .. _tqdm: https://github.com/tqdm/tqdm
 .. _Django: https://www.djangoproject.com
