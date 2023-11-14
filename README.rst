@@ -1,7 +1,7 @@
 django-tqdm
 ==============
 
-|PyPI| |PyPI-Versions| |LICENSE| |Tests| |Codecov| |Requirements| |Downloads| |Weekly Downloads|
+|PyPI| |PyPI-Versions| |LICENSE| |Tests| |Codecov| |Downloads| |Weekly Downloads|
 
 *Fast, Extensible Progress Meter (tqdm) For Django*.
 
@@ -148,10 +148,6 @@ Read `developer documentation`_.
 .. |Codecov| image:: https://codecov.io/gh/desecho/django-tqdm/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/desecho/django-tqdm
    :alt: Code coverage
-
-.. |Requirements| image:: https://requires.io/github/desecho/django-tqdm/requirements.svg?branch=master
-   :target: https://requires.io/github/desecho/django-tqdm/requirements/?branch=master
-   :alt: Requirements Status
 
 .. |Downloads| image:: https://pepy.tech/badge/django-tqdm
    :target: https://pepy.tech/project/django-tqdm
