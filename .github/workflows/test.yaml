@@ -26,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3.5.1
         with:
-          node-version: 15.x
+          node-version: 20.x
           registry-url: https://registry.npmjs.org
 
       - name: Set up Python
