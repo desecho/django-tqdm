@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Drop Django 2 support
+- Drop Python 3.7 support
 
 ## 1.3.1
 
