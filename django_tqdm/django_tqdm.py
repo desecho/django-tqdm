@@ -39,7 +39,7 @@ class Tqdm(tqdm, OutputBase):
             kwargs["leave"] = False
         super().__init__(*args, **kwargs)
 
-    # pylint: disable=arguments-renamed
+    # pylint: disable=arguments-renamed,too-many-positional-arguments
     def write(
         self, text: str, file: TextIO = sys.stdout, ending: str = "\n", fatal: bool = False, error: bool = False
     ) -> None:
