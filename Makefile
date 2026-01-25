@@ -50,7 +50,9 @@ install-test-deps: install-shfmt install-actionlint
 	$(call print,Installing shellcheck)
 	@sudo apt install shellcheck -y
 	$(call print,Installing tox)
-	@sudo pip3 install tox
+	@sudo apt install pipx -y
+	@pipx ensurepath
+	@pipx install tox
 	$(call print,Installing markdownlint-cli)
 	@sudo npm install -g markdownlint-cli
 
